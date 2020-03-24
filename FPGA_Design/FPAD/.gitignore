@@ -65,3 +65,15 @@ xlnx_auto_0_xdb/
 xst/
 _ngo/
 _xmsgs/
+
+#isim files
+*.log
+*.sym
+*.cmd
+*.exe
+*.xmsgs
+isim/
+*.spl
+*.tfi
+*.wdb
+*.ini
