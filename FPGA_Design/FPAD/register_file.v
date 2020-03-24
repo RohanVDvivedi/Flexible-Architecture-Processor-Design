@@ -24,6 +24,17 @@ module register_file(
     inout [7:0] bus,
     input clk
     );
-
+	 
+	 /*
+			Register file internal addresses 0x00 - 0x0f
+	 */
+	 
+	reg[7:0] registers[15:0];
+	 
+	always@(posedge(clk))
+	begin
+		registers[w_addr] <= (w_addr[7:4] == 4'b0) ? bus : 8'bz;
+	end
+	assign bus = (r_addr[7:4] == 4'b0) ? registers[r_addr] : 8'bz;
 
 endmodule
